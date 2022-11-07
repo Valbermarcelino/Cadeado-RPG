@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<head>
+    <title>
+        Desafio números
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="page-title">
+            Coloque sua senha abaixo
+        </h1>
+    <a href="https://alura.com.br/" target="_blank">
+    </a>
+      
+      <div class="espaçamento"></div>
+      
+  <div class="calculadora">
+  <div class="tela" id="tela"></div>
+  <div class="botoes">
+    <div class="painel-numeros">
+      <div class="numeros">
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+      <div class="numeros">
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+      </div>
+      <div class="numeros">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+      <div class="numeros">
+        <div>0</div>
+        <div id="limpar">C</div>
+        <div id="responder">Resp.</div>
+      </div>
+    </div>
+   
+  </div>
+</div>
+</div>
+
+<script>
+var input = document.getElementById('tela'),
+  numero = document.querySelectorAll('.numeros div'),
+  conta = document.querySelectorAll('.contas div'),
+  resultado = document.getElementById('resultado'),
+    responder = document.getElementById('responder'),
+  limpar = document.getElementById('limpar'),
+  resultadoEstaMostrado = false;
+
+// adiconando evento de clique nos botões dos numeros
+for (var i = 0; i < numero.length; i++) {
+  numero[i].addEventListener("click", function(e) {
+
+    // variaveis do texto na tela
+    var textoNaTela = input.innerHTML;
+
+    if (e.target.innerHTML != "Resp.") {
+      input.innerHTML += e.target.innerHTML;
+    }
+
+  });
+}
+
+// adiconando evento de clique no botão limpar
+limpar.addEventListener("click", function() {
+  input.innerHTML = "";
+})
+
+responder.addEventListener("click", function() {
+  if (input.innerHTML == "835") {
+    alert("sua senha está correta!");
+  } else {
+    alert("sua senha incorreta");
+    input.innerHTML = "";
+  }
+})
+</script>
+
+<style>
+body {
+    font-family: 'Roboto Mono',monospace;
+    background-image: url('https://cdn.discordapp.com/attachments/468228661418524673/823877228315541544/unknown.png');
+    background-color: #000000;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .page-title {
+    color: #ffffff;
+    margin: 0 0 5px;
+  }
+  
+  .page-subtitle {
+    color: #ffffff;
+    margin-top: 5px;
+  }
+  
+  .page-logo {
+    width: 200px;
+  }
+  
+  .alura-logo {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    right:10px;
+  }
+
+  *:focus {
+    outline: 0 !important;
+  }
+
+
+.espaçamento {
+  margin: 0 auto;
+  height:40px;
+}
+
+.calculadora {
+  margin: 0 auto;
+  width: 294px;
+  background-color: black;
+  border: 1px solid #ddd;
+}
+
+.tela {
+  width: 279px;
+  border: 0;
+  border-radius: 1px;
+  height: 60px;
+  padding-right: 15px;
+  padding-top: 10px;
+  background-color: #202020;
+  text-align: right;
+  margin-right: 6px;
+  font-size: 2.5rem;
+  color: white;
+  overflow-x: auto;
+  transition: all .2s ease-in-out;
+}
+
+.contas div {
+  color: white;
+  display: inline-block;
+  border: 0;
+  border-radius: 1px;
+  width: 40px;
+  text-align: center;
+  padding: 10px;
+  margin: 20px 4px 10px 0;
+  cursor: pointer;
+  background-color: #202020;
+  transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
+}
+
+.painel-numeros {
+  display: inline-block;
+}
+
+.numeros div {
+  color: white;
+  display: inline-block;
+  border: 0;
+  border-radius: 1px;
+  width: 40px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px 4px 10px 0;
+  cursor: pointer;
+  background-color: #202020;
+  transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
+}
+
+.igual {
+  display: inline-block;
+  border: 0;
+  border-radius: 1px;
+  width: 40px;
+  text-align: center;
+  padding: 102px 10px;
+  margin: 10px 6px 10px 0;
+  vertical-align: top;
+  cursor: pointer;
+  color: #FFF;
+  background-color: #202020;
+  transition: all .2s ease-in-out;
+}
+</style>
+
+
+</body>
+</html>
