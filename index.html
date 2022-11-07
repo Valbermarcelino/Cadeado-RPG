@@ -11,10 +11,9 @@
 
 <body>
     <div class="container">
-        <h1 class="page-title">
+        <h1 class="page-title" id="resposta">
             Coloque sua senha abaixo
         </h1>
-    <a href="https://alura.com.br/" target="_blank">
     </a>
       
       <div class="espaçamento"></div>
@@ -53,10 +52,9 @@
 var input = document.getElementById('tela'),
   numero = document.querySelectorAll('.numeros div'),
   conta = document.querySelectorAll('.contas div'),
-  resultado = document.getElementById('resultado'),
+  resposta = document.getElementById('resposta'),
     responder = document.getElementById('responder'),
-  limpar = document.getElementById('limpar'),
-  resultadoEstaMostrado = false;
+  limpar = document.getElementById('limpar');
 
 // adiconando evento de clique nos botões dos numeros
 for (var i = 0; i < numero.length; i++) {
@@ -79,9 +77,9 @@ limpar.addEventListener("click", function() {
 
 responder.addEventListener("click", function() {
   if (input.innerHTML == "835") {
-    alert("sua senha está correta!");
+    resposta.innerHTML = "sua senha está correta!";
   } else {
-    alert("sua senha incorreta");
+    resposta.innerHTML = "senha incorreta";
     input.innerHTML = "";
   }
 })
